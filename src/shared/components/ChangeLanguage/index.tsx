@@ -40,10 +40,10 @@ const ChangeLanguage: any = () => {
         {LANGUAGE.map((_language: ISelect, idx) => {
           return (
             <Option value={_language.value} key={idx}>
+              {_language.label}
               {isString(_language?.data) && (
                 <img src={_language?.data} alt="" className="language-icon" />
               )}
-              {_language.label}
             </Option>
           );
         })}
