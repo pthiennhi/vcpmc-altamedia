@@ -1,0 +1,121 @@
+@import '../styles/variable.scss';
+@import '../styles/mixin.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+.login {
+  background-color: #1e1e2e;
+  box-sizing: border-box;
+  width: 100vw; 
+  min-height: 100vh ;
+  padding-top: 24px;
+  padding-bottom: 52px;
+}
+.language{
+  margin-bottom: 52px;
+}
+
+.select-language {
+  display: inline-flex;
+  margin-right: 80px;
+  background-color: transparent ;
+  border: 1px solid #c8c8db;
+  border-radius: 4px;
+}
+.select-language .ant-select-selector {
+  background: transparent;
+  background-color: transparent !important; 
+  border: none !important;
+  color: white;
+}
+.select-language .ant-select-arrow{
+  color: white;
+}
+.logo {
+  max-width: 240px;
+  max-height: 240px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.login-title {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: -0.2px;
+}
+.login-username span {
+  color: white;
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5rem;
+  letter-spacing: -0.2px;
+  margin-bottom: 0.5rem;
+}
+.login-username input {
+  min-width: 29.5rem;
+  min-height: 3rem;
+  border-radius: 0.5rem;
+  background-color: #2b2b3f;
+  border: none;
+  padding: 11px 24px 13px 16px;
+  color: #f5f5ff;
+}
+.login-password span {
+  color: white;
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5rem;
+  letter-spacing: -0.2px;
+  margin-bottom: 0.5rem;
+}
+.login-password input {
+  min-width: 29.5rem;
+  min-height: 3rem;
+  border-radius: 0.5rem;
+  background-color: #2b2b3f;
+  border: 1px solid #727288;
+  padding: 11px 24px 13px 16px;
+  color: #f5f5ff;
+}
+.remember-checkbox {
+  margin-bottom: 48px;
+}
+.remember-checkbox label {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+.btn-login {
+  background-color: #ff7506;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  padding: 16px 24px 16px 24px;
+  min-width: 208px;
+  max-height: 56px;
+}
+.btn-login:hover,
+.btn-login:focus,
+.btn-login:active {
+  background-color: #d56000;
+  color: white;
+}
+.forgot-password{
+  margin-top: 205px;
+}
+.forgot-password-text {
+  color: #d56000;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  border-bottom: 1px solid #d56000;
+}
