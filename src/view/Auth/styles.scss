@@ -4,7 +4,7 @@
 * {
   font-family: 'Montserrat', sans-serif;
 }
-.login {
+.login, .forgot-password {
   background-color: #1e1e2e;
   box-sizing: border-box;
   width: 100vw;
@@ -39,11 +39,11 @@
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-.login-title {
+.login-title, .forgot-password-title {
   color: white;
-  font-size: 2.25rem;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 3rem;
+  line-height: 48px;
   letter-spacing: -0.002em;
 }
 #login-form .ant-form-item-label {
