@@ -106,7 +106,7 @@ const Login = () => {
               Đăng nhập
             </Button>
           </Form.Item>
-          <Form.Item className="forgot-password">
+          <Form.Item className="forgot-password-link">
             <Link to="/forgot-password">Quên mật khẩu?</Link>
           </Form.Item>
         </Form>
