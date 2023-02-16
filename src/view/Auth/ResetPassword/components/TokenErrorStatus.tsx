@@ -1,19 +1,35 @@
 import React from 'react';
 import { useAltaIntl } from '@shared/hook/useTranslate';
 import { useNavigate } from 'react-router';
+import ChangeLanguage from '@shared/components/ChangeLanguage';
+import { logo_vcpmc } from '@assets/images';
+import { Link } from 'react-router-dom';
+import { Button } from 'antd';
 
 const TokenErrorStatus = () => {
   const navigate = useNavigate();
   const { formatMessage } = useAltaIntl();
   return (
-    <div className="main-form auth-form">
-      <div className="error-token__box">
-        <h3 className="main-title">{formatMessage('reset.password.title.error')}</h3>
-        <p>{formatMessage('reset.password.notification')}</p>
-        <div className="button-center__box">
-          <button onClick={() => navigate('/login')} className="normal-button">
-            {formatMessage('common.button.return')}
-          </button>
+    <div className="reset-password">
+      <div className="d-flex justify-content-end language">
+        <ChangeLanguage />
+      </div>
+
+      <div className="flex-column d-flex gap-5">
+        <div className="d-flex justify-content-center">
+          <div className="logo">
+            <img width={240} src={logo_vcpmc} alt="vcpmc" />
+          </div>
+        </div>
+        <h1 className="reset-password-title text-center">Không thể kết nối !!</h1>
+        <div className="reset-password-status">
+          <p>{formatMessage('reset.password.notification')}</p>
+        </div>
+        <div className="sent-link-button">
+          <Button htmlType="submit">Yêu cầu gửi lại link</Button>
+        </div>
+        <div className="return-login-link">
+          <Link to="/login">Quay lại đăng nhập</Link>
         </div>
       </div>
     </div>

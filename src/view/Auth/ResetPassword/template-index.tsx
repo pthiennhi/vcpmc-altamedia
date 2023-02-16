@@ -11,37 +11,28 @@ import '../styles.scss';
 const ResetPassword = () => {
   const navigate = useNavigate();
   const { formatMessage } = useAltaIntl();
-  const [isRecoveryToken, setIsRecoveryToken] = useState<boolean>(false);
-  // const { CheckRecoveryToken } = authenticationPresenter;
-  // const CheckRecoveryTokenCall = useSingleAsync(CheckRecoveryToken);
+  const [isRecoveryToken, setIsRecoveryToken] = useState<boolean>(true);
+  const { CheckRecoveryToken } = authenticationPresenter;
+  const CheckRecoveryTokenCall = useSingleAsync(CheckRecoveryToken);
   const { token } = useParams<{ token: any }>();
 
-  // useEffect(() => {
-  //   CheckRecoveryTokenCall?.execute(token)
-  //     .then(() => {
-  //       setIsRecoveryToken(true);
-  //     })
-  //     .catch(() => {
-  //       setIsRecoveryToken(false);
-  //     });
-  // }, [CheckRecoveryTokenCall, token]);
-
   useEffect(() => {
-    console.log('token', token);
-    if (token === '123') {
-      console.log('ok');
-      setIsRecoveryToken(true);
-    } else {
-      setIsRecoveryToken(false);
-    }
-  });
+    CheckRecoveryTokenCall?.execute(token)
+      .then(() => {
+        setIsRecoveryToken(true);
+      })
+      .catch(() => {
+        setIsRecoveryToken(false);
+      });
+  }, [CheckRecoveryTokenCall, token]);
+
   return (
     <>
-      {isRecoveryToken ? <UpdatePasswordForm recoveryToken={token} /> : <TokenErrorStatus />}
-      {/* <NavLinkBottom
+      {!isRecoveryToken ? <UpdatePasswordForm recoveryToken={token} /> : <TokenErrorStatus />}
+      <NavLinkBottom
         navLink={formatMessage('link.return.login')}
         onClick={() => navigate('/login')}
-      /> */}
+      />
     </>
   );
 };
