@@ -12,17 +12,17 @@ const ForgotPassword = () => {
   const [checkSuccessEmail, setCheckSuccessEmail] = useState<boolean>(false);
   const navigate = useNavigate();
   const [errorStatus, setErrorStatus] = useState('');
-
+  const [email, setEmail] = useState('');
+  const onChangeEmail = (e: any) => {
+    setEmail(e.target.value);
+  };
   const onFinishFailed = () => {
     setErrorStatus('');
   };
   const onSubmitEmail = (values: any) => {
-    if (values.email === '') {
-      setErrorStatus('Email không được để trống');
-
-      return;
-    } else if (values.email !== 'a@gmail.com') {
+    if (email !== 'a@gmail.com') {
       setErrorStatus('Email không tồn tại');
+      return;
     } else {
       setCheckSuccessEmail(true);
     }
@@ -54,9 +54,9 @@ const ForgotPassword = () => {
                 onFinishFailed={onFinishFailed}
                 requiredMark={false}
               >
-                <label htmlFor="email">Email</label>
+                <label htmlFor="Email">Email</label>
                 <Form.Item
-                  name="email"
+                  name="Email"
                   rules={[
                     {
                       required: true,
@@ -66,13 +66,11 @@ const ForgotPassword = () => {
                     },
                   ]}
                 >
-                  <Input placeholder="david@gmail.com" />
+                  <Input placeholder="david@gmail.com" onChange={onChangeEmail} />
                 </Form.Item>
                 {errorStatus && <RenderError errorStatus={errorStatus} />}
                 <div className="normal-button">
-                  <Button htmlType="submit">
-                    Xác nhận
-                  </Button>
+                  <Button htmlType="submit">Xác nhận</Button>
                 </div>
               </Form>
             </div>
@@ -80,11 +78,15 @@ const ForgotPassword = () => {
         ) : (
           <div className="forgot-password-status">
             <p>
-              Link khôi phục mật khẩu đã được gửi vào email của bạn. Vui lòng kiểm tra mail. Click
-              vào đường link được đính kèm để chuyển đến trang đặt lại mật khẩu.
+              Link khôi phục mật khẩu đã được gửi vào email của bạn. Vui lòng kiểm tra mail.
+              <br /> 
+              Click vào đường link được đính kèm trong email để chuyển đến trang đặt lại mật khẩu.
             </p>
           </div>
         )}
+        <div className="return-login-link">
+          <Link to="/login">Quay lại đăng nhập</Link>
+        </div>
       </div>
     </div>
   );
