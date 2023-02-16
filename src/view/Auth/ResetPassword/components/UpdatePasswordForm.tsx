@@ -14,7 +14,7 @@ const UpdatePasswordForm: React.FC<IUpdatePasswordForm> = props => {
   const resetPasswordCall = useSingleAsync(resetPass);
 
   const [errorStatus, setErrorStatus] = useState('');
-  const onSubmitResetPassword = values => {
+  const onSubmitResetPassword = (values:any) => {
     resetPasswordCall?.execute(values, props.recoveryToken).then(() => {
       navigate('/login');
     });
