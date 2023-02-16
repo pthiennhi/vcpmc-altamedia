@@ -7,6 +7,7 @@ import NavLinkBottom from '../components/NavLinkBottom';
 import TokenErrorStatus from './components/TokenErrorStatus';
 import UpdatePasswordForm from './components/UpdatePasswordForm';
 import '../styles.scss';
+import './styles.scss';
 
 const ResetPassword = () => {
   const navigate = useNavigate();

@@ -1,5 +1,6 @@
 // import "./Login.css";
 import '../styles.scss';
+import './styles.scss';
 import React, { useState } from 'react';
 import { logo_vcpmc } from '@assets/images';
 import ChangeLanguage from '@shared/components/ChangeLanguage';

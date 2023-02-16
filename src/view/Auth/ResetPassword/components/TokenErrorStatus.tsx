@@ -21,7 +21,7 @@ const TokenErrorStatus = () => {
             <img width={240} src={logo_vcpmc} alt="vcpmc" />
           </div>
         </div>
-        <h1 className="reset-password-title text-center">Không thể kết nối !!</h1>
+        <h1 className="reset-password-title text-center " style={{color:'red'}}>Không thể kết nối !!</h1>
         <div className="reset-password-status">
           <p>{formatMessage('reset.password.notification')}</p>
         </div>
