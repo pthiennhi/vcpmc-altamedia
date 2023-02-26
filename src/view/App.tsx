@@ -28,9 +28,10 @@ const App: React.FC = () => {
   }, [language]);
 
   useEffect(() => {
-    if (lodash.isEmpty(token)) {
-      navigate('/login');
-    }
+    navigate('/');
+    // if (lodash.isEmpty(token)) {
+    //   navigate('/login');
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
