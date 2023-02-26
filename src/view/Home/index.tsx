@@ -1,10 +1,21 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router';
+import { useEffect } from 'react';
 
 const Home = () => {
   const navigate = useNavigate();
 
-  return <div className="home">hellu</div>;
+  useEffect(() => {
+    navigate('/kho-ban-ghi');
+  });
+
+  return (
+    <div className="home">
+      <Sidebar />
+      <div>lo con cac</div>
+    </div>
+  );
 };
 
 export default Home;
