@@ -74,14 +74,14 @@ const items = [
     children: [
       getItem({
         label: 'Báo cáo doanh thu',
-        key: 'doanh-thu/bao-cao-doanh-thu',
+        key: 'report-profit',
       }),
       getItem({
-        key: 'doanh-thu/lich-su-doi-soat',
+        key: 'history-profit',
         label: 'Lịch sử đối soát',
       }),
       getItem({
-        key: 'doanh-thu/phan-phoi-doanh-thu',
+        key: 'profit',
         label: 'Phân phối doanh thu',
       }),
     ],
